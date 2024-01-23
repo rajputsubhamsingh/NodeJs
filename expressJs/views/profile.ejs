@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <title>Profile Page</title>
+</head>
+<body>
+    <!-- isse hm header joki hmra common file usko sbme access kar skte hai. -->
+    <%- include('common/header.ejs') %>
+    <h1>Profile Page</h1>
+    <h2>Welcome <%= user.name %></h2>
+    <h2>Email - <%= user.email %></h2>
+    <h2>Age - <%= user.age %></h2>
+    <h2>City - <%= user.city %></h2>
+
+    <h2>Skills - </h2>
+    <ul>
+        <% user.skills.forEach((item) => { %>
+            <li><%= item %></li>
+        <%  }) %>
+    </ul>
+
+</body>
+</html>
