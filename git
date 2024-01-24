@@ -1,0 +1,7 @@
+git remote add origin https://github.com/rajputsubhamsingh/NodeJs.git
+git remote set-url origin https://github.com/rajputsubhamsingh/NodeJs.git
+git status
+git add .
+git commit -m "NodeJs"
+git pull origin main
+git push origin main
