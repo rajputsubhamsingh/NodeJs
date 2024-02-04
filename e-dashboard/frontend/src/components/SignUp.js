@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom' 
 
 const SignUp = () => {
@@ -6,6 +6,13 @@ const SignUp = () => {
     const [ password, setPassword ] = useState("")
     const [ email, setEmail ] = useState("")
     const navigate = useNavigate()
+
+    useEffect(() => {
+        const auth = localStorage.getItem('user') 
+        if(auth){
+            navigate('/')
+        }
+    })
 
     const collectData = async () => {
         console.warn(name, email, password);
@@ -30,8 +37,8 @@ const SignUp = () => {
         <div className='register'>
             <h1>Register</h1>
             <input value={name} onChange={(e) => setName(e.target.value)} className='inputBox' type='text' placeholder='Enter Name'/>
-            <input value={password} onChange={(e) => setPassword(e.target.value)} className='inputBox' type='text' placeholder='Enter Email'/>
-            <input value={email} onChange={(e) => setEmail(e.target.value)} className='inputBox' type='password' placeholder='Password'/> 
+            <input value={email} onChange={(e) => setEmail(e.target.value)} className='inputBox' type='text' placeholder='Enter Email'/>
+            <input value={password} onChange={(e) => setPassword(e.target.value)} className='inputBox' type='password' placeholder='Password'/> 
 
             <button onClick={collectData} className='btn' type='button'>Sign Up</button>
         </div>
