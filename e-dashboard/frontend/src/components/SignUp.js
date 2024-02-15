@@ -27,10 +27,10 @@ const SignUp = () => {
         console.warn(result);
         localStorage.setItem('user', JSON.stringify(result));
         navigate('/', { replace: true });
-        if (result) {
-            // navigate(to='/')   // not working
-            navigate('/', { replace: true });
-        }
+        // if (result) {
+        //     // navigate(to='/')   // not working
+        //     navigate('/', { replace: true });
+        // }
     }
 
     return(
